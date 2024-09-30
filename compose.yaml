@@ -1,6 +1,6 @@
 services:
   gonic:
-    image: sentriz/gonic:643ffff
+    image: docker.io/sentriz/gonic:643ffff
     environment:
       TZ: ${TZ}
     ports:
@@ -25,7 +25,7 @@ services:
         target: /cache
 
   airsonic-refix:
-    image: tamland/airsonic-refix:sha-cdd78d9
+    image: docker.io/tamland/airsonic-refix:sha-cdd78d9
     environment:
       - TZ
     ports:
