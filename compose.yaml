@@ -1,11 +1,11 @@
 services:
-  gonic:
-    image: docker.io/sentriz/gonic:643ffff
+  navidrome:
+    image: docker.io/deluan/navidrome:0.53.3
+    ports:
+      - ${PORT:-4533}:4533
+    restart: unless-stopped
     environment:
       TZ: ${TZ}
-    ports:
-      - ${GONIC_PORT:-4747}:80
-    restart: unless-stopped
     volumes:
       - type: bind
         source: ./data
@@ -14,24 +14,3 @@ services:
         source: ${MISIC_DIR}
         target: /music
         read_only: true
-      - type: bind
-        source: ${PODCASTS_DIR}
-        target: /podcasts
-      - type: bind
-        source: ${PLAYLISTS_DIR}
-        target: /playlists
-      - type: volume
-        source: cache
-        target: /cache
-
-  airsonic-refix:
-    image: docker.io/tamland/airsonic-refix:sha-cdd78d9
-    environment:
-      - TZ
-    ports:
-      - ${REFIX_PORT:-8080}:80
-
-volumes:
-  cache:
-    name: cache
-    driver: local
