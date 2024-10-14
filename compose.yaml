@@ -6,6 +6,11 @@ services:
     restart: unless-stopped
     environment:
       TZ: ${TZ}
+      ND_BASEURL: ${BASEURL:-""}
+      ND_DEFAULTLANGUAGE: ${LANGUAGE:-en}
+      ND_ENABLECOVERANIMATION: false
+      ND_SPOTIFY_ID: ${SPOTIFY_ID:-""}
+      ND_SPOTIFY_SECRET: ${SPOTIFY_SECRET:-""}
     volumes:
       - type: bind
         source: ./data

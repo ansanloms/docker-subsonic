@@ -3,7 +3,3 @@ data/*
 !data/.gitkeep
 music/*
 !music/.gitkeep
-playlists/*
-!playlists/.gitkeep
-podcasts/*
-!podcasts/.gitkeep
