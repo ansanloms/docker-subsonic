@@ -2,7 +2,7 @@ services:
   navidrome:
     image: docker.io/deluan/navidrome:0.53.3
     ports:
-      - ${PORT:-4533}:4533
+      - ${NAVIDROME_PORT:-4533}:4533
     restart: unless-stopped
     environment:
       TZ: ${TZ}
@@ -19,3 +19,11 @@ services:
         source: ${MISIC_DIR}
         target: /music
         read_only: true
+  airsonic:
+    image: docker.io/tamland/airsonic-refix:sha-97419c6
+    ports:
+      - ${AIRSONIC_PORT:-4534}:80
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ}
+      SERVER_URL: http://navidrome:4533/${BASEURL:-""}
