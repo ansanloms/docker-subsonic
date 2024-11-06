@@ -26,4 +26,4 @@ services:
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      SERVER_URL: http://navidrome:4533/${BASEURL:-""}
+      SERVER_URL: ${AIRSONIC_SERVER_URL:""}
