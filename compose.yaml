@@ -6,11 +6,8 @@ services:
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      ND_BASEURL: ${BASEURL:-""}
-      ND_DEFAULTLANGUAGE: ${LANGUAGE:-en}
-      ND_ENABLECOVERANIMATION: false
-      ND_SPOTIFY_ID: ${SPOTIFY_ID:-""}
-      ND_SPOTIFY_SECRET: ${SPOTIFY_SECRET:-""}
+      ND_CONFIGFILE: "/data/navidrome.toml"
+      ND_MUSICFOLDER: "/music"
     volumes:
       - type: bind
         source: ./data
@@ -19,6 +16,8 @@ services:
         source: ${MISIC_DIR}
         target: /music
         read_only: true
+    env_file:
+      - .env
   airsonic:
     image: docker.io/tamland/airsonic-refix:sha-55893e9
     ports:

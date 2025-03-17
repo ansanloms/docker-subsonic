@@ -1,0 +1,10 @@
+LogLevel = "DEBUG"
+MusicFolder = "/music"
+DataFolder = "/data"
+ScanSchedule = "@every 24h"
+TranscodingCacheSize = "150MiB"
+SessionTimeout = "240h"
+
+# https://www.navidrome.org/docs/usage/customtags/#separating-writer-and-composer-tags
+Tags.Composer.Aliases = ["composer", "tcom", "composer", "©wrt", "wm/composer", "imus"]
+Tags.Writer.Aliases = ["writer", "txxx:writer", "iwri"]
