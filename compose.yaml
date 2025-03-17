@@ -1,6 +1,6 @@
 services:
   navidrome:
-    image: docker.io/deluan/navidrome:0.54.3
+    image: docker.io/deluan/navidrome:0.55.1
     ports:
       - ${NAVIDROME_PORT:-4533}:4533
     restart: unless-stopped
@@ -20,7 +20,7 @@ services:
         target: /music
         read_only: true
   airsonic:
-    image: docker.io/tamland/airsonic-refix:sha-97419c6
+    image: docker.io/tamland/airsonic-refix:sha-55893e9
     ports:
       - ${AIRSONIC_PORT:-4534}:80
     restart: unless-stopped
