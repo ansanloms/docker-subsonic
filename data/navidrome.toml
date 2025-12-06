@@ -8,3 +8,7 @@ SessionTimeout = "240h"
 # https://www.navidrome.org/docs/usage/customtags/#separating-writer-and-composer-tags
 Tags.Composer.Aliases = ["composer", "tcom", "composer", "©wrt", "wm/composer", "imus"]
 Tags.Writer.Aliases = ["writer", "txxx:writer", "iwri"]
+
+# https://www.navidrome.org/docs/usage/pids/#default-configuration
+PID.Track = "musicbrainz_trackid|albumid,discnumber,tracknumber,title"
+PID.Album = "musicbrainz_albumid|albumartistid,album,albumversion"
