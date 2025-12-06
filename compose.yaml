@@ -1,6 +1,6 @@
 services:
   navidrome:
-    image: docker.io/deluan/navidrome:0.55.1
+    image: docker.io/deluan/navidrome:0.58.5
     ports:
       - ${NAVIDROME_PORT:-4533}:4533
     restart: unless-stopped
@@ -19,7 +19,7 @@ services:
     env_file:
       - .env
   airsonic:
-    image: docker.io/tamland/airsonic-refix:sha-55893e9
+    image: docker.io/tamland/airsonic-refix:sha-5910e6f
     ports:
       - ${AIRSONIC_PORT:-4534}:80
     restart: unless-stopped
