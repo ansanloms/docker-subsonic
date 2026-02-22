@@ -1,13 +1,13 @@
 services:
   navidrome:
-    image: docker.io/deluan/navidrome:0.58.5
+    image: docker.io/deluan/navidrome:0.60.2
     ports:
       - ${NAVIDROME_PORT:-4533}:4533
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      ND_CONFIGFILE: "/data/navidrome.toml"
-      ND_MUSICFOLDER: "/music"
+      ND_CONFIGFILE: /data/navidrome.toml
+      ND_MUSICFOLDER: /music
     volumes:
       - type: bind
         source: ./data
@@ -18,11 +18,15 @@ services:
         read_only: true
     env_file:
       - .env
-  airsonic:
-    image: docker.io/tamland/airsonic-refix:sha-5910e6f
+  feishin:
+    image: ghcr.io/jeffvli/feishin:1.6.0
     ports:
-      - ${AIRSONIC_PORT:-4534}:80
+      - ${FEISHIN_PORT:-4534}:80
     restart: unless-stopped
     environment:
       TZ: ${TZ}
-      SERVER_URL: ${AIRSONIC_SERVER_URL:-""}
+      SERVER_NAME: navidrome
+      SERVER_LOCK: true
+      SERVER_TYPE: navidrome
+      LEGACY_AUTHENTICATION: false
+      ANALYTICS_DISABLED: true
