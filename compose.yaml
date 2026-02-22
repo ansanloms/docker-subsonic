@@ -8,6 +8,11 @@ services:
       TZ: ${TZ}
       ND_CONFIGFILE: /data/navidrome.toml
       ND_MUSICFOLDER: /music
+      ND_BASEURL: ${ND_BASEURL:-}
+      ND_DEFAULTLANGUAGE: ${ND_DEFAULTLANGUAGE:-}
+      ND_DEFAULTTHEME: ${ND_DEFAULTTHEME:-}
+      ND_SPOTIFY_ID: ${ND_SPOTIFY_ID:-}
+      ND_SPOTIFY_SECRET: ${ND_SPOTIFY_SECRET:-}
     volumes:
       - type: bind
         source: ./data
