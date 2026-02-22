@@ -33,6 +33,6 @@ services:
       SERVER_NAME: navidrome
       SERVER_LOCK: true
       SERVER_TYPE: navidrome
-      SERVER_URL: http://navidrome:4533
-      LEGACY_AUTHENTICATION: false
+      SERVER_URL: ${SERVER_URL}
+      LEGACY_AUTHENTICATION: true
       ANALYTICS_DISABLED: true
