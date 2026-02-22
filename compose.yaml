@@ -21,7 +21,7 @@ services:
   feishin:
     image: ghcr.io/jeffvli/feishin:1.6.0
     ports:
-      - ${FEISHIN_PORT:-4534}:80
+      - ${FEISHIN_PORT:-9180}:80
     restart: unless-stopped
     environment:
       TZ: ${TZ}
