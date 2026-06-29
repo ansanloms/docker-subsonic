@@ -1,6 +1,6 @@
 services:
   navidrome:
-    image: docker.io/deluan/navidrome:0.60.2
+    image: docker.io/deluan/navidrome:0.62.0
     ports:
       - ${NAVIDROME_PORT:-4533}:4533
     restart: unless-stopped
